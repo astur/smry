@@ -39,8 +39,20 @@ test('fractionDigits', t => {
 });
 
 test('quantile', t => {
+    t.is(
+        smry([1, 2, 3, 4], {quantile: []}).quantile,
+        undefined
+    );
     t.deepEqual(
-        smry([1, 2, 3, 4], {quantile: 0.5}),
-        {min: 1, max: 4, sum: 10, len: 4, avg: 2.5, quantile: {0.5: 2.5}}
+        smry([1, 2, 3, 4], {quantile: 0.5}).quantile,
+        {0.5: 2.5}
+    );
+    t.deepEqual(
+        smry([1, 2, 3, 4], {quantile: [0.5]}).quantile,
+        {0.5: 2.5}
+    );
+    t.deepEqual(
+        smry([1, 2, 3, 4], {quantile: [0.25, 0.5, 0.75]}).quantile,
+        {0.25: 1.25, 0.5: 2.5, 0.75: 3.75}
     );
 });
