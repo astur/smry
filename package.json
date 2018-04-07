@@ -15,6 +15,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "arfy": "0.0.1",
     "quantile": "^1.0.0"
   },
   "devDependencies": {
