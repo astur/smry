@@ -1,8 +1,7 @@
 {
-  "private": true,
   "name": "smry",
   "version": "0.0.0",
-  "description": "",
+  "description": "Сomputes a summary for number array",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
   "scripts": {
@@ -21,7 +20,8 @@
     "eslint-config-astur": "0.0.2"
   },
   "keywords": [
-    "smry"
+    "summary",
+    "statistics"
   ],
   "license": "MIT"
 }
