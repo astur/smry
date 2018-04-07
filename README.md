@@ -18,9 +18,10 @@ smry(array, options);
 ```
 
 * `array` - array of numbers for computing statistic summary.
-* `options` - object with following options:
+* `options` (optional) - object with following options:
   * `sorted` - Boolean. `true` means that object preliminarily sorted. Otherwise it will be sorted in `smry`. Defaults to `false`.
   * `fractionDigits` - number of digits to appear after the decimal point in every summary field. Defaults to 10.
+  * `quantile' - probability (number between 0 and 1) for computing quantile of array. Or array of probabilities.
 
 Returns object with following fields:
 
@@ -29,6 +30,7 @@ Returns object with following fields:
 * `sum` - sum of all array elements
 * `len` - size of array
 * `avg` - average value of all array elements
+* `quantile` - object with specified quantiles of array (only if `quantile` option present).
 
 ## Example
 
