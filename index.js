@@ -1,6 +1,9 @@
+const _quantile = require('quantile');
+
 module.exports = (arr, {
     sorted = false,
     fractionDigits = 10,
+    quantile = null,
 } = {}) => {
     if(!sorted) arr = arr.slice().sort((x, y) => x - y);
     const len = arr.length;
@@ -15,5 +18,9 @@ module.exports = (arr, {
     Object.keys(r).forEach(k => {
         r[k] = +r[k].toFixed(fractionDigits);
     });
+    if(quantile !== null){
+        const q = _quantile(arr, quantile);
+        r.quantile = {[quantile]: +q.toFixed(fractionDigits)};
+    }
     return r;
 };
