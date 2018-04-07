@@ -1,6 +1,6 @@
 # smry
 
-Сomputes a summary for number array
+Computes a summary for number array
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
@@ -12,6 +12,24 @@ npm i smry
 ```
 
 ## Usage
+
+```js
+smry(array, options);
+```
+
+* `array` - array of numbers for computing statistic summary.
+* `options` - object with following options:
+  * `sorted` - Boolean. `true` means that object preliminarily sorted. Otherwise it will be sorted in `smry`. Defaults to `false`.
+
+Returns object with following fields:
+
+* `min` - minimum value of array
+* `max` - maximum value of array
+* `sum` - sum of all array elements
+* `len` - size of array
+* `avg` - average value of all array elements
+
+## Example
 
 ```js
 const smry = require('smry');
