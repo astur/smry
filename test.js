@@ -1,7 +1,7 @@
 const test = require('ava');
-const m = require('.');
+const smry = require('.');
 
 test('smry', t => {
-    t.true(true);
-    t.is(m, m);
+    t.deepEqual(smry([1, 2, 3, 4, 5]), {min: 1, max: 5, sum: 15, len: 5, avg: 3});
+    t.deepEqual(smry([4, 1, 3, 5, 2]), {min: 1, max: 5, sum: 15, len: 5, avg: 3});
 });
