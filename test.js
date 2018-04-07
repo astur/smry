@@ -37,3 +37,10 @@ test('fractionDigits', t => {
         {min: 0, max: 1, sum: 1, len: 2, avg: 0.5}
     );
 });
+
+test('quantile', t => {
+    t.deepEqual(
+        smry([1, 2, 3, 4], {quantile: 0.5}),
+        {min: 1, max: 4, sum: 10, len: 4, avg: 2.5, quantile: {0.5: 2.5}}
+    );
+});
