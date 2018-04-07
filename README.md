@@ -20,6 +20,7 @@ smry(array, options);
 * `array` - array of numbers for computing statistic summary.
 * `options` - object with following options:
   * `sorted` - Boolean. `true` means that object preliminarily sorted. Otherwise it will be sorted in `smry`. Defaults to `false`.
+  * `fractionDigits` - number of digits to appear after the decimal point in every summary field. Defaults to 10.
 
 Returns object with following fields:
 
