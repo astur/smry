@@ -1,5 +1,5 @@
-module.exports = arr => {
-    arr = arr.slice().sort((x, y) => x - y);
+module.exports = (arr, {sorted = false} = {}) => {
+    if(!sorted) arr = arr.slice().sort((x, y) => x - y);
     const len = arr.length;
     const sum = arr.reduce((a, b) => a + b, 0);
     return {
