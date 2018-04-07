@@ -1,6 +1,6 @@
 # smry
 
-smry description here
+Сomputes a summary for number array
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
@@ -15,6 +15,15 @@ npm i smry
 
 ```js
 const smry = require('smry');
+
+console.log(smry([4, 1, 3, 5, 2]));
+/*
+{ min: 1,
+  max: 5,
+  sum: 15,
+  len: 5,
+  avg: 3 }
+*/
 ```
 
 ## License
