@@ -1,11 +1,13 @@
 const _quantile = require('quantile');
+const arfy = require('arfy');
 
 module.exports = (arr, {
     sorted = false,
     fractionDigits = 10,
-    quantile = null,
+    quantile = [],
 } = {}) => {
     if(!sorted) arr = arr.slice().sort((x, y) => x - y);
+    quantile = arfy(quantile);
     const len = arr.length;
     const sum = arr.reduce((a, b) => a + b, 0);
     const r = {
@@ -18,9 +20,9 @@ module.exports = (arr, {
     Object.keys(r).forEach(k => {
         r[k] = +r[k].toFixed(fractionDigits);
     });
-    if(quantile !== null){
-        const q = _quantile(arr, quantile);
-        r.quantile = {[quantile]: +q.toFixed(fractionDigits)};
-    }
+    quantile.forEach(q => {
+        if(!r.quantile) r.quantile = {};
+        r.quantile[q] = +_quantile(arr, q).toFixed(fractionDigits);
+    });
     return r;
 };
