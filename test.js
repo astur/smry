@@ -56,3 +56,41 @@ test('quantile', t => {
         {0.25: 1.25, 0.5: 2.5, 0.75: 3.75}
     );
 });
+
+test('errors', t => {
+    t.throws(() => {
+        smry();
+    }, TypeError);
+    t.throws(() => {
+        smry(1);
+    }, TypeError);
+    t.throws(() => {
+        smry(['1']);
+    }, TypeError);
+    t.throws(() => {
+        smry([]);
+    }, 'Expected array of numbers');
+
+    t.throws(() => {
+        smry([1], {fractionDigits: '20'});
+    }, TypeError);
+    t.throws(() => {
+        smry([1], {fractionDigits: -1});
+    }, RangeError);
+    t.throws(() => {
+        smry([1], {fractionDigits: 21});
+    }, RangeError);
+
+    t.throws(() => {
+        smry([1], {quantile: '0.5'});
+    }, TypeError);
+    t.throws(() => {
+        smry([1], {quantile: ['0.5']});
+    }, TypeError);
+    t.throws(() => {
+        smry([1], {quantile: 0});
+    }, RangeError);
+    t.throws(() => {
+        smry([1], {quantile: [1]});
+    }, RangeError);
+});
