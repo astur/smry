@@ -21,7 +21,7 @@ smry(array, options);
 * `options` (optional) - object with following options:
   * `sorted` - Boolean. `true` means that object preliminarily sorted. Otherwise it will be sorted in `smry`. Defaults to `false`.
   * `fractionDigits` - number of digits to appear after the decimal point in every summary field. Defaults to 10.
-  * `quantile' - probability (number between 0 and 1) for computing quantile of array. Or array of probabilities.
+  * `quantile` - probability (number between 0 and 1) for computing quantile of array. Or array of probabilities.
 
 Returns object with following fields:
 
