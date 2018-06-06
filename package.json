@@ -1,6 +1,6 @@
 {
   "name": "smry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Сomputes a summary for number array",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
